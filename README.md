@@ -1,6 +1,6 @@
 # Sylan Docs
 
-This repository contains the **official documentation** for the [Sylan Protocol](https://dash.sylan.xyz), a decentralized API marketplace powered by the **SYL token**.
+This repository contains the **official documentation** for the [Sylan Protocol](https://sylan.xyz), a decentralized API marketplace powered by the **SYL token**.
 
 ## Overview
 
@@ -57,5 +57,5 @@ Contracts in related repositories are licensed under **MIT/Apache-2.0**.
 
 ---
 
-💡 For more information, visit the live docs at [dash.sylan.xyz](https://dash.sylan.xyz).
+💡 For more information, visit the live docs at [docs.sylan.xyz](https://docs.sylan.xyz).
 
