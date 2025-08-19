@@ -47,7 +47,7 @@ export default async function RootLayout({ children }) {
           navbar={navbar}
           footer={<Footer>MIT {new Date().getFullYear()} © Sylan.</Footer>}
           editLink="Edit this page on GitHub"
-          docsRepositoryBase="https://github.com/sylanproject/sylan-docs/blob/main/examples/docs"
+          docsRepositoryBase="https://github.com/sylanproject/sylan-docs/blob/main"
           sidebar={{ defaultMenuCollapseLevel: 2 }}
           pageMap={pageMap}
         >
