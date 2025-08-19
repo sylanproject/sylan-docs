@@ -1,0 +1,37 @@
+# Quickstart (5 minutes)
+
+This guide helps you **request an API** using PayPerCall on testnet.
+Prereqs: Node 18+, pnpm, a wallet (e.g., Rabby/Metamask) funded with testnet gas + SYL.
+
+## Steps
+1. **Connect wallet** in the Sylan dashboard.
+2. **Pick an API** listing from **AccessRegistry**.
+3. **Approve** SYL for **APIEscrow** (ERC-20 allowance).
+4. **Lock for call** via `APIEscrow.lockForCall(apiId, requestHash, expiresAtMs)`.
+5. **Wait for consensus** (nodes submit EIP-712 snapshots).
+6. **Settle** automatically on success/failure; view receipt & logs.
+
+## Minimal viem/Wagmi Example
+```ts
+import { erc20Abi, parseUnits } from 'viem'
+import { useWriteContract } from 'wagmi'
+
+// Approve
+const { writeContractAsync: approve } = useWriteContract()
+await approve({
+  abi: erc20Abi,
+  address: SYL_ADDRESS,
+  functionName: 'approve',
+  args: [APIEscrow_ADDRESS, parseUnits('10', 18)]
+})
+
+// Lock
+const { writeContractAsync: lock } = useWriteContract()
+await lock({
+  abi: APIESCROW_ABI,
+  address: APIEscrow_ADDRESS,
+  functionName: 'lockForCall',
+  args: [apiId, requestHash, BigInt(Date.now() + 120_000)]
+})
+```
+See [Request Lifecycle](/concepts/request-lifecycle).

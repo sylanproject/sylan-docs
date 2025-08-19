@@ -1,0 +1,10 @@
+# Examples
+
+Express adapter (pseudo):
+```ts
+app.get('/data', async (req, res) => {
+  verifyTicket(req.headers['x-sylan-ticket'])
+  const data = await computeResponse()
+  res.json(data)
+})
+```

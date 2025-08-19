@@ -1,0 +1,7 @@
+# EIP-712 (Snapshot Signing)
+
+Nodes verify provider-signed **Snapshots**:
+```
+{ apiId, seqNo, providerTs, ttl, contentHash }
+```
+Define domain separator (name, version, chainId, verifyingContract). Ensure providers **sign the same struct** nodes propagate.

@@ -1,0 +1,8 @@
+# Consensus
+
+- **Quorum:** finalize when a strategy-defined threshold of matching snapshots arrive.
+- **seqMonotonic (optional):** enforce strictly increasing `seqNo` per API.
+- **Expiry + Grace:** request must finalize before `expiresAtMs`, with grace windows for network jitter.
+- **Equivocation detection:** providers signing conflicting content can be penalized via policy.
+
+See contract: [/contracts/api-consensus](/contracts/api-consensus)

@@ -1,0 +1,17 @@
+# APIEscrow
+
+**Responsibilities**
+- Hold funds for PPC/Subscriptions
+- Route payouts to Provider/Nodes/Platform on settle
+
+**Core Functions**
+- `lockForCall(bytes32 apiId, bytes32 requestHash, uint64 expiresAtMs)`
+- `purchaseSubscription(bytes32 apiId, uint64 duration)`
+- `settleSuccess(bytes32 requestId)` / `settleFailure(bytes32 requestId)`
+
+**Flow**
+1. Validate plan (active, type matches)
+2. Pull SYL via `transferFrom`
+3. Snapshot fee splits
+4. Wait for **APIConsensus** finality
+5. Distribute balances

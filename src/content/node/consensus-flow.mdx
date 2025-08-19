@@ -1,0 +1,6 @@
+# Consensus Flow
+
+- Listen for `RequestRegistered`
+- Fetch provider data; verify signatures
+- Submit Snapshot (EIP-712) with `contentHash`
+- Retry with backoff; respect expiry windows

@@ -1,0 +1,8 @@
+# Data Integrity
+
+Nodes post an **EIP-712 Snapshot** referencing a `contentHash` of the provider’s response.
+- `contentHash`: keccak256 hash of the serialized response (or pointer).
+- `seqNo`: optional sequence monotonicity.
+- `providerTs` / `ttl`: freshness constraints.
+
+This ensures off-chain payloads are **authentic and consistent** without storing large blobs on-chain.

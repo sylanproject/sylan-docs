@@ -1,0 +1,9 @@
+# Events & Logging
+
+All contracts emit events; **EventLogger** offers structured indexing. Indexers can subscribe to:
+- `RequestCreated(requestId, apiId, consumer, nonce)`
+- `SnapshotSubmitted(requestId, contentHash, signer)`
+- `Finalized(requestId, status)`
+- `Settled(requestId, status, payouts)`
+
+See: [/reference/events](/reference/events)

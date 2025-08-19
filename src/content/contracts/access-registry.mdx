@@ -1,0 +1,14 @@
+# AccessRegistry
+
+**Responsibilities**
+- Create API listings & plans
+- Manage nonces and request IDs
+- Authorize Subscription/PPC parameters
+
+**Key Surfaces**
+- `apiPlan(bytes32 apiId)` → plan
+- `createRequestFor(bytes32 apiId, address consumer, bytes32 requestHash, uint64 expiresAtMs)` → `requestId`
+- `consumerNonce(address consumer, bytes32 apiId)`
+
+**Deterministic RequestId**
+Derived from chain, `apiId`, `consumer`, and `nonce` to prevent replay across chains.

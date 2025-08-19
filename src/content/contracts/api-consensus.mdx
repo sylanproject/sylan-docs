@@ -1,0 +1,20 @@
+# APIConsensus
+
+**Responsibilities**
+- Register requests and track snapshots
+- Determine final result via quorum
+- Emit finalization events
+
+**Core Functions**
+- `registerRequest(bytes32 requestId, bytes32 apiId, address consumer, uint256 nonce, uint64 expiresAtMs)`
+- `submitSnapshot(...)` (EIP-712)
+- `finalize(bytes32 requestId)`
+
+**Snapshot (EIP-712)**
+```
+{ apiId, seqNo, providerTs, ttl, contentHash }
+```
+**Policies**
+- Quorum thresholds
+- Optional `seqMonotonic`
+- Expiry + grace periods

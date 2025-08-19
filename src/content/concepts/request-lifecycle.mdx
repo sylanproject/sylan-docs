@@ -1,0 +1,11 @@
+# Request Lifecycle
+
+**PayPerCall (PPC)** sequence:
+1. Consumer **locks funds**: `APIEscrow.lockForCall(apiId, requestHash, expiresAtMs)`
+2. Registry **creates request**: `AccessRegistry.createRequestFor(...)` (nonce increments)
+3. Consensus **registers**: `APIConsensus.registerRequest(requestId, ...)`
+4. Nodes submit **EIP-712 Snapshot** `{apiId, seqNo, providerTs, ttl, contentHash}`
+5. Consensus **finalize/fail**
+6. Escrow **settle**: `settleSuccess` / `settleFailure`
+
+**Subscription** differs in payment timing; metering is enforced off-chain with on-chain proofs where needed.
