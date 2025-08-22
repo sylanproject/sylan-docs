@@ -13,5 +13,6 @@ export default {
   "deploy": "Deploy",
   "tokenomics": "Tokenomics",
   "reference": "Reference",
-  "community": "Community"
+  "community": "Community",
+  "whitepaper": "Whitepaper"
 }
